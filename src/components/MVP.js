@@ -1,4 +1,4 @@
-function MVP(){
+function MVP({mvps}){
 
 }
 

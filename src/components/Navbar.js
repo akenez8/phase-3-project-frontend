@@ -1,16 +1,6 @@
 import { NavLink } from "react-router-dom";
 import Header from "./Header"
 
-const linkStyles = {
-  display: "inline-block",
-  width: "50px",
-  padding: "12px",
-  margin: "0 6px 6px",
-  background: "blue",
-  textDecoration: "none",
-  color: "white",
-};
-
 function Navbar() {
   return (
     <div>
