@@ -1,8 +1,7 @@
 function Home(){
     return(
     <div>
-      <header className="header">National Football League</header>
-      <p>TESTTESTTESTTEST</p>
+      <p id="homeVideoTitle">Home Video Title Here</p>
     </div>
     )
 }
