@@ -1,5 +1,5 @@
 import Team from "./Team"
-
+import Createyourteam from "./Createyourteam"
 function NFC({teams}){
     let nfcSouthTeams= [...teams]
     nfcSouthTeams= nfcSouthTeams.slice(28)
@@ -45,7 +45,7 @@ function NFC({teams}){
             <h1>NFC South Teams</h1>
             {listNfcSouthTeams}
           </ul>
-
+        <Createyourteam/>
         </div>
         
     )

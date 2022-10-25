@@ -8,7 +8,6 @@ function Navbar() {
       <NavLink className="nav" style={{ marginRight: "10px" }} to="/">Home</NavLink>
       <NavLink className="nav" style={{ marginRight: "10px" }} to="/AFC">AFC</NavLink>
       <NavLink className="nav" style={{ marginRight: "10px" }} to="/NFC">NFC</NavLink>
-      <NavLink className="nav" style={{ marginRight: "10px" }} to="/Createyourteam"> Create Your Team</NavLink>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import Team from "./Team"
-
+import Createyourteam from "./Createyourteam"
 function AFC({teams}){
     let afcSouthTeams= [...teams]
     afcSouthTeams= afcSouthTeams.slice(12,16)
@@ -45,7 +45,7 @@ function AFC({teams}){
             <h1>AFC South Teams</h1>
             {listAfcSouthTeams}
           </ul>
-
+        <Createyourteam />
         </div>
         
     )

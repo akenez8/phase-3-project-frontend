@@ -27,6 +27,9 @@ function App() {
     .then((data) => setMvps(data))
   },[])
 
+  function addNewTeam(newTeamObj){
+    setTeams([...teams, newTeamObj])
+  }
 
   return (
     <div className="App">
@@ -38,7 +41,7 @@ function App() {
         <Route path="/Conference" element={<Conference />} />
         <Route path="/Team" element={<Team />} />
         <Route path="/MVP" element={<MVP mvps={mvps}/>} />
-        <Route path="/Createyourteam" element={<Createyourteam/>}/>
+        <Route path="/Createyourteam" element={<Createyourteam addNewTeam={addNewTeam}/>}/>
       </Routes>
 
     </div>
