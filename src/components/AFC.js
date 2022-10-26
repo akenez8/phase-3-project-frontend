@@ -1,12 +1,12 @@
 import Team from "./Team"
 import Createyourteam from "./Createyourteam"
-function AFC({teams}){
+function AFC({teams,  deleteTeam, addNewTeam}){
 
     let afcSouthTeams= [...teams]
     afcSouthTeams= afcSouthTeams.slice(12,16)
     const listAfcSouthTeams = afcSouthTeams.map((team) => {
         return(
-            <Team key={teams.id} team={team} />
+            <Team key={team.id} team={team} deleteTeam= {deleteTeam} />
         )
     })
 
@@ -14,7 +14,7 @@ function AFC({teams}){
     afcNorthTeams= afcNorthTeams.slice(8,12)
     const listAfcNorthTeams = afcNorthTeams.map((team) => {
         return(
-            <Team key={teams.id} team={team} />
+            <Team key={team.id} team={team} deleteTeam= {deleteTeam}/>
         )
     })
 
@@ -22,7 +22,7 @@ function AFC({teams}){
     afcWestTeams= afcWestTeams.slice(4,8)
     const listAfcWestTeams = afcWestTeams.map((team) => {
         return(
-            <Team key={teams.id} team={team} />
+            <Team key={team.id} team={team} deleteTeam= {deleteTeam}/>
         )
     })
 
@@ -30,7 +30,7 @@ function AFC({teams}){
     afcEastTeams= afcEastTeams.slice(0,4)
     const listAfcEastTeams = afcEastTeams.map((team) => {
         return(
-            <Team key={teams.id} team={team} />
+            <Team key={team.id} team={team} deleteTeam= {deleteTeam}/>
         )
     })
     return(        
@@ -54,7 +54,7 @@ function AFC({teams}){
             {listAfcSouthTeams}
             </div>
           </ul>
-        <Createyourteam />
+        <Createyourteam addNewTeam={addNewTeam}/>
         </div>
         
     )

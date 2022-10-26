@@ -6,14 +6,14 @@ import Home from "./Home.js"
 import AFC from "./AFC"
 import NFC from "./NFC"
 import Conference from "./Conference"
-import Team from "./Team"
 import MVP from "./MVP"
-import Createyourteam from "./Createyourteam.js";
+
 
 function App() {
 
   const [teams, setTeams] = useState([])
   const [mvps, setMvps] = useState([])
+  const [headCoaches, setHeadCoaches] = useState([])
 
   useEffect(() => {
     fetch("http://localhost:9292/teams")
@@ -27,30 +27,31 @@ function App() {
     .then((data) => setMvps(data))
   },[])
 
-  function addNewTeam(newTeamObj){
-    setTeams([...teams, newTeamObj])
-  }
+  useEffect(() => {
+    fetch("http://localhost:9292/headcoaches")
+    .then((res) => res.json())
+    .then((data) => setHeadCoaches(data))
+  },[])
 
-  function updatedRecord(){
-    console.log('updaterecord')
+  function addNewTeam(newTeamObj){
+    setTeams(prev => [...prev, newTeamObj])
   }
 
   function deleteTeam(deletedTeam){
     const updatedTeams = teams.filter((team) => team.id !== deletedTeam.id);
     setTeams(updatedTeams); 
   }
+ 
 
   return (
     <div className="body">
       <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route path="/AFC" element={<AFC teams={teams} />} />
-        <Route path="/NFC" element={<NFC teams={teams} />} />
+        <Route path="/AFC" element={<AFC teams={teams}  deleteTeam={deleteTeam} addNewTeam={addNewTeam}/>} />
+        <Route path="/NFC" element={<NFC teams={teams} addNewTeam={addNewTeam}/>} />
         <Route path="/Conference" element={<Conference />} />
-        <Route path="/Team" element={<Team updatedRecord={updatedRecord} deleteTeam={deleteTeam} />} />
         <Route path="/MVP" element={<MVP mvps={mvps}/>} />
-        <Route path="/Createyourteam" element={<Createyourteam addNewTeam={addNewTeam}/>}/>
       </Routes>
 
     </div>

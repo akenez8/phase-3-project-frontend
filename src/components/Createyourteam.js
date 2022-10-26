@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import Createyourmvp from "./Createyourmvp.js"
 
 function CreateYourTeam({addNewTeam}){
     const [newTeamName, setNewTeamName] = useState("")
@@ -11,7 +10,7 @@ function CreateYourTeam({addNewTeam}){
         const newTeamObj = {
             name: newTeamName,
             city: newTeamCity,
-            record: newTeamRecord
+            win_loss_tie: newTeamRecord
         }
         fetch(`http://localhost:9292/teams`, {
             method: `POST`,
@@ -42,7 +41,6 @@ function CreateYourTeam({addNewTeam}){
                 placeholder="Team Record..."
                 value={newTeamRecord}
                 onChange={(e) => setNewTeamRecord(e.target.value)}/>
-                {/* <Createyourmvp/> */}
                 <button type="submit" className = "newTeamButton">Submit</button>
             </form>
         </div>

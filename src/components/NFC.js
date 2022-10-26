@@ -1,6 +1,6 @@
 import Team from "./Team"
 import Createyourteam from "./Createyourteam"
-function NFC({teams}){
+function NFC({teams, addNewTeam}){
 
 
     let nfcSouthTeams= [...teams]
@@ -55,7 +55,7 @@ function NFC({teams}){
             {listNfcSouthTeams}
             </div>
           </ul>
-        <Createyourteam/>
+        <Createyourteam addNewTeam={addNewTeam}/>
         </div>
         
     )
