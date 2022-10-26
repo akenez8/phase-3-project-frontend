@@ -1,6 +1,7 @@
 import Team from "./Team"
 import Createyourteam from "./Createyourteam"
 function AFC({teams}){
+
     let afcSouthTeams= [...teams]
     afcSouthTeams= afcSouthTeams.slice(12,16)
     const listAfcSouthTeams = afcSouthTeams.map((team) => {
@@ -33,17 +34,25 @@ function AFC({teams}){
         )
     })
     return(        
-        <div>
-          <h1>Choose Your Conference From The NFC</h1> 
-          <ul className= "cards">
-            <h1>AFC East Teams</h1>
+        <div className="card">
+          <h2>Choose Your Conference From The AFC</h2> 
+          <ul>
+            <div className="cards">
+            <h3>AFC East Teams</h3>
             {listAfcEastTeams}
-            <h1>AFC West Teams</h1>
+            </div>
+            <div className="cards">
+            <h3>AFC West Teams</h3>
             {listAfcWestTeams}
-            <h1>AFC North Teams</h1>
+            </div>
+            <div className="cards">
+            <h3>AFC North Teams</h3>
             {listAfcNorthTeams}
-            <h1>AFC South Teams</h1>
+            </div>
+            <div className="cards">
+            <h3>AFC South Teams</h3>
             {listAfcSouthTeams}
+            </div>
           </ul>
         <Createyourteam />
         </div>

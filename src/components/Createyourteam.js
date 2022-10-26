@@ -1,4 +1,4 @@
-import react, {useState} from 'react';
+import React, {useState} from 'react';
 import Createyourmvp from "./Createyourmvp.js"
 
 function CreateYourTeam({addNewTeam}){
@@ -20,7 +20,7 @@ function CreateYourTeam({addNewTeam}){
         })
         .then(res => res.json())
         .then(data => addNewTeam(data))
-    }
+    }    
     
 
     return(

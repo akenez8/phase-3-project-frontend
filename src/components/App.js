@@ -31,15 +31,24 @@ function App() {
     setTeams([...teams, newTeamObj])
   }
 
+  function updatedRecord(){
+    console.log('updaterecord')
+  }
+
+  function deleteTeam(deletedTeam){
+    const updatedTeams = teams.filter((team) => team.id !== deletedTeam.id);
+    setTeams(updatedTeams); 
+  }
+
   return (
-    <div className="App">
+    <div className="body">
       <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/AFC" element={<AFC teams={teams} />} />
         <Route path="/NFC" element={<NFC teams={teams} />} />
         <Route path="/Conference" element={<Conference />} />
-        <Route path="/Team" element={<Team />} />
+        <Route path="/Team" element={<Team updatedRecord={updatedRecord} deleteTeam={deleteTeam} />} />
         <Route path="/MVP" element={<MVP mvps={mvps}/>} />
         <Route path="/Createyourteam" element={<Createyourteam addNewTeam={addNewTeam}/>}/>
       </Routes>

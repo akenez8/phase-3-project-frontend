@@ -1,6 +1,8 @@
 import Team from "./Team"
 import Createyourteam from "./Createyourteam"
 function NFC({teams}){
+
+
     let nfcSouthTeams= [...teams]
     nfcSouthTeams= nfcSouthTeams.slice(28)
     const listNfcSouthTeams = nfcSouthTeams.map((team) => {
@@ -33,17 +35,25 @@ function NFC({teams}){
         )
     })
     return(        
-        <div>
-          <h1>Choose Your Conference From The NFC</h1> 
-          <ul className= "cards">
-            <h1>NFC East Teams</h1>
+        <div className="card">
+          <h2>Choose Your Conference From The NFC</h2> 
+          <ul>
+            <div className="cards">
+            <h3>NFC East Teams</h3>
             {listNfcEastTeams}
-            <h1>NFC West Teams</h1>
+            </div>
+            <div className="cards">
+            <h3>NFC West Teams</h3>
             {listNfcWestTeams}
-            <h1>NFC North Teams</h1>
+            </div>
+            <div className="cards">
+            <h3>NFC North Teams</h3>
             {listNfcNorthTeams}
-            <h1>NFC South Teams</h1>
+            </div>
+            <div className="cards">
+            <h3>NFC South Teams</h3>
             {listNfcSouthTeams}
+            </div>
           </ul>
         <Createyourteam/>
         </div>
