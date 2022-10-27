@@ -9,6 +9,7 @@ function Navbar() {
       <NavLink className="nav" to="/">Home</NavLink>
       <NavLink className="nav" to="/AFC">AFC</NavLink>
       <NavLink className="nav" to="/NFC">NFC</NavLink>
+      <NavLink className="nav" to="/MVP">MVP</NavLink>
     </div>
   );
 }

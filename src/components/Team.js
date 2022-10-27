@@ -57,7 +57,6 @@ function Team({team, deleteTeam, mvps, headCoaches}){
         <h4 onClick = {captainClick}>{team.name}</h4>
         <p><b>City:</b> {team.city}</p>
         <p><b>Record:</b> {`${winCount}-${lossCount}-${tieCount}`}</p>
-        <p>{displayCoachAndCaptain ? `Team Captain: ${mvps.name} ` : false}</p>
         <p>{displayCoachAndCaptain ? `Head Coach: ${headCoaches.name} ` : false}</p>
         <button className="remove" onClick={handleDeleteClick}>Delete Team</button>
         <button onClick={() => handleUpdateRecordWin()}>Add Win</button>

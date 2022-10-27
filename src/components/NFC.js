@@ -1,7 +1,8 @@
 import Team from "./Team"
 import Createyourteam from "./Createyourteam"
 
-function NFC({teams, deleteTeam, addNewTeam, headCoaches,mvps}){
+
+function NFC({teams, deleteTeam, addNewTeam, headCoaches, mvps}){
 
 
     let nfcSouthTeams= [...teams]

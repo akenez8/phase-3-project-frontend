@@ -1,6 +1,7 @@
 import Team from "./Team"
 import Createyourteam from "./Createyourteam"
 
+
 function AFC({teams,  deleteTeam, addNewTeam, headCoaches, mvps}){
 
     let afcSouthTeams= [...teams]
@@ -8,14 +9,6 @@ function AFC({teams,  deleteTeam, addNewTeam, headCoaches, mvps}){
     const listAfcSouthTeams = afcSouthTeams.map((team) => {
         return(
             <Team key={team.id} team={team} deleteTeam= {deleteTeam} mvps={mvps} headCoaches={headCoaches}/>
-        )
-    })
-
-    let afcSouthMvps= [...mvps]
-    afcSouthMvps= afcSouthMvps.slice(12,16)
-    const listAfcSouthMvps = afcSouthMvps.map((mvp) => {
-        return(
-            <Team key={mvp.id}  mvp={mvp}/>
         )
     })
 

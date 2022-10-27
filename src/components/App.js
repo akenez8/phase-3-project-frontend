@@ -5,6 +5,7 @@ import Navbar from "./Navbar.js"
 import Home from "./Home.js"
 import AFC from "./AFC"
 import NFC from "./NFC"
+import MVP from "./MVP";
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
   const [teams, setTeams] = useState([])
   const [mvps, setMvps] = useState([])
   const [headCoaches, setHeadCoaches] = useState([])
+
 
   useEffect(() => {
     fetch("http://localhost:9292/teams")
@@ -39,6 +41,10 @@ function App() {
     const updatedTeams = teams.filter((team) => team.id !== deletedTeam.id);
     setTeams(updatedTeams); 
   }
+
+  function addNewMvp(newMvpObj){
+    setMvps(prev => [...prev, newMvpObj])
+  }
  
 
   return (
@@ -46,8 +52,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route path="/AFC" element={<AFC teams={teams} headCoaches={headCoaches} mvps={mvps} deleteTeam={deleteTeam} addNewTeam={addNewTeam}/>} />
-        <Route path="/NFC" element={<NFC teams={teams} headCoaches={headCoaches} mvps={mvps} deleteTeam={deleteTeam} addNewTeam={addNewTeam}/>} />
+        <Route path="/AFC" element={<AFC teams={teams} headCoaches={headCoaches} deleteTeam={deleteTeam} addNewTeam={addNewTeam} />} />
+        <Route path="/NFC" element={<NFC teams={teams} headCoaches={headCoaches} deleteTeam={deleteTeam} addNewTeam={addNewTeam} />} />
+        <Route path="/MVP" element={<MVP  mvps={mvps} addNewMvp={addNewMvp}/>}/>
       </Routes>
 
     </div>
