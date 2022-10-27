@@ -1,9 +1,9 @@
 function Home(){
     return(
-    <div>
-      <p id="homeVideoTitle"><b>NFL HIGHLIGHTS WEEK 7</b></p>
+    <div class="homeDiv">
+      <p id="homeVideoTitle"><b>The National Football League</b></p>
       <div id="homeImgDiv">
-    <img id="highlightsVideo" src="https://www.youtube.com/watch?v=jqekaWz7Vag&ab_channel=NFL" alt={"Hightlights Video"} />
+    <img id="highlightsVideo" src="https://i.pinimg.com/474x/c3/c9/0e/c3c90e1ee1951f32af139df75a599f7f--american-football-nfl-football.jpg" alt={"Hightlights Video"} />
     </div>
     </div>
     )
