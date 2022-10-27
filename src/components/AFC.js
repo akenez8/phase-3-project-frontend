@@ -11,6 +11,14 @@ function AFC({teams,  deleteTeam, addNewTeam, headCoaches, mvps}){
         )
     })
 
+    let afcSouthMvps= [...mvps]
+    afcSouthMvps= afcSouthMvps.slice(12,16)
+    const listAfcSouthMvps = afcSouthMvps.map((mvp) => {
+        return(
+            <Team key={mvp.id}  mvp={mvp}/>
+        )
+    })
+
     let afcNorthTeams= [...teams]
     afcNorthTeams= afcNorthTeams.slice(8,12)
     const listAfcNorthTeams = afcNorthTeams.map((team) => {
@@ -35,7 +43,7 @@ function AFC({teams,  deleteTeam, addNewTeam, headCoaches, mvps}){
         )
     })
     return(        
-        <div className="card">
+        <div className="AfcCard">
           <h2>Choose Your Conference From The AFC</h2> 
           <ul>
             <div className="cards">

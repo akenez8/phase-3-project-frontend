@@ -4,12 +4,50 @@
 
 #homeVideoTitle{
   text-align: center;
+  font-size: 50px;
+}
+
+/* #highlightsvideo{
+
+} */
+
+.nflLogo{
+ margin: 20px;
+}
+
+.logo{
+  max-width: 150px;
+  max-height: 300px;
+
 }
 
 #headerTitle{
   text-align: center;
+  display: inline;
 }
 
 #teamDiv{
   font-size: 20px;
+}
+
+.AfcCard{
+    background-color: rgb(240, 11, 11);
+    margin: 1rem;
+    border-style: solid;
+    border-width: 4px 4px 4px 4px;
+    border-color: rgb(15, 15, 15);
+    border-radius: 0.3rem;
+    text-align: center;
+    
+}
+
+.NfcCard {
+  background-color: rgb(35, 35, 211);
+  margin: 1rem;
+  border-style: solid;
+  border-width: 4px 4px 4px 4px;
+  border-color: rgb(15, 15, 15);
+  border-radius: 0.3rem;
+  text-align: center;
+
 }

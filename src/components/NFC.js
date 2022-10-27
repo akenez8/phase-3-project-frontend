@@ -36,7 +36,7 @@ function NFC({teams, deleteTeam, addNewTeam, headCoaches,mvps}){
         )
     })
     return(        
-        <div className="card">
+        <div className="NfcCard">
           <h2>Choose Your Conference From The NFC</h2> 
           <ul>
             <div className="cards">

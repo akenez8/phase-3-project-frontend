@@ -5,9 +5,10 @@ function Team({team, deleteTeam, mvps, headCoaches}){
     const[winCount, setWinCount] = useState(team.win)
     const[lossCount, setLossCount] = useState(team.loss)
     const[tieCount, setTieCount] = useState(team.tie)
-    const [displayCaptain, setDisplayCaptain] = useState(false)
+    const [displayCoachAndCaptain, setDisplayCoachAndCaptain] = useState(false)
+
     const captainClick = () => {
-        setDisplayCaptain((prev) => !prev)
+        setDisplayCoachAndCaptain((prev) => !prev)
     }
 
     function handleDeleteClick(){
@@ -56,8 +57,8 @@ function Team({team, deleteTeam, mvps, headCoaches}){
         <h4 onClick = {captainClick}>{team.name}</h4>
         <p><b>City:</b> {team.city}</p>
         <p><b>Record:</b> {`${winCount}-${lossCount}-${tieCount}`}</p>
-        <p>{displayCaptain ? `Team Captain: ${mvps.name} ` : false}</p>
-        <p>{displayCaptain ? `Head Coach: ${headCoaches.name} ` : false}</p>
+        <p>{displayCoachAndCaptain ? `Team Captain: ${mvps.name} ` : false}</p>
+        <p>{displayCoachAndCaptain ? `Head Coach: ${headCoaches.name} ` : false}</p>
         <button className="remove" onClick={handleDeleteClick}>Delete Team</button>
         <button onClick={() => handleUpdateRecordWin()}>Add Win</button>
         <button onClick={() => handleUpdateRecordLoss()}>Add Loss</button>
