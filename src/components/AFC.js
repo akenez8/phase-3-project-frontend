@@ -8,7 +8,7 @@ function AFC({teams,  deleteTeam, addNewTeam, headCoaches, mvps}){
     afcSouthTeams= afcSouthTeams.slice(12,16)
     const listAfcSouthTeams = afcSouthTeams.map((team) => {
         return(
-            <Team key={team.id} team={team} deleteTeam= {deleteTeam} mvps={mvps} headCoaches={headCoaches}/>
+            <Team key={team.id} team={team} deleteTeam= {deleteTeam} mvps={mvps} />
         )
     })
 
@@ -16,7 +16,7 @@ function AFC({teams,  deleteTeam, addNewTeam, headCoaches, mvps}){
     afcNorthTeams= afcNorthTeams.slice(8,12)
     const listAfcNorthTeams = afcNorthTeams.map((team) => {
         return(
-            <Team key={team.id} team={team} deleteTeam= {deleteTeam} mvps={mvps} headCoaches={headCoaches}/>
+            <Team key={team.id} team={team} deleteTeam= {deleteTeam} mvps={mvps}/>
         )
     })
 
@@ -24,7 +24,7 @@ function AFC({teams,  deleteTeam, addNewTeam, headCoaches, mvps}){
     afcWestTeams= afcWestTeams.slice(4,8)
     const listAfcWestTeams = afcWestTeams.map((team) => {
         return(
-            <Team key={team.id} team={team} deleteTeam= {deleteTeam} mvps={mvps} headCoaches={headCoaches}/>
+            <Team key={team.id} team={team} deleteTeam= {deleteTeam} mvps={mvps} />
         )
     })
 
@@ -32,7 +32,7 @@ function AFC({teams,  deleteTeam, addNewTeam, headCoaches, mvps}){
     afcEastTeams= afcEastTeams.slice(0,4)
     const listAfcEastTeams = afcEastTeams.map((team) => {
         return(
-            <Team key={team.id} team={team} deleteTeam= {deleteTeam} mvps={mvps} headCoaches={headCoaches}/>
+            <Team key={team.id} team={team} deleteTeam= {deleteTeam} mvps={mvps} />
         )
     })
     return(        

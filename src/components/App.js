@@ -43,7 +43,7 @@ function App() {
   }
 
   function addNewMvp(newMvpObj){
-    setMvps(prev => [...prev, newMvpObj])
+    setMvps(prev => [...prev, newMvpObj].sort((a,b) => b.year - a.year))
   }
  
 

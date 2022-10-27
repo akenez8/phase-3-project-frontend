@@ -1,14 +1,14 @@
 import React, {useState} from "react";
 
 function Team({team, deleteTeam, mvps, headCoaches}){
-    
+    console.log(team)
     const[winCount, setWinCount] = useState(team.win)
     const[lossCount, setLossCount] = useState(team.loss)
     const[tieCount, setTieCount] = useState(team.tie)
-    const [displayCoachAndCaptain, setDisplayCoachAndCaptain] = useState(false)
+    const [displayCoach, setDisplayCoach] = useState(false)
 
     const captainClick = () => {
-        setDisplayCoachAndCaptain((prev) => !prev)
+        setDisplayCoach((prev) => !prev)
     }
 
     function handleDeleteClick(){
@@ -57,7 +57,7 @@ function Team({team, deleteTeam, mvps, headCoaches}){
         <h4 onClick = {captainClick}>{team.name}</h4>
         <p><b>City:</b> {team.city}</p>
         <p><b>Record:</b> {`${winCount}-${lossCount}-${tieCount}`}</p>
-        <p>{displayCoachAndCaptain ? `Head Coach: ${headCoaches.name} ` : false}</p>
+        <p>{displayCoach ? `Head Coach:  ${team.head_coaches[0].name}` : false}</p>
         <button className="remove" onClick={handleDeleteClick}>Delete Team</button>
         <button onClick={() => handleUpdateRecordWin()}>Add Win</button>
         <button onClick={() => handleUpdateRecordLoss()}>Add Loss</button>
@@ -67,3 +67,4 @@ function Team({team, deleteTeam, mvps, headCoaches}){
 }
 
 export default Team
+// 
