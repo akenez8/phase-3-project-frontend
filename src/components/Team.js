@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function Team({team, updatedRecord, deleteTeam, mvps, headCoaches}){
+function Team({team, deleteTeam, mvps, headCoaches}){
     
     const[winCount, setWinCount] = useState(team.win)
     const[lossCount, setLossCount] = useState(team.loss)
@@ -56,7 +56,8 @@ function Team({team, updatedRecord, deleteTeam, mvps, headCoaches}){
         <h4 onClick = {captainClick}>{team.name}</h4>
         <p><b>City:</b> {team.city}</p>
         <p><b>Record:</b> {`${winCount}-${lossCount}-${tieCount}`}</p>
-        <p>{displayCaptain ? `Team Captain: Team Captain ` : false}</p>
+        <p>{displayCaptain ? `Team Captain: ${mvps.name} ` : false}</p>
+        <p>{displayCaptain ? `Head Coach: ${headCoaches.name} ` : false}</p>
         <button className="remove" onClick={handleDeleteClick}>Delete Team</button>
         <button onClick={() => handleUpdateRecordWin()}>Add Win</button>
         <button onClick={() => handleUpdateRecordLoss()}>Add Loss</button>

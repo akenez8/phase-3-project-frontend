@@ -5,8 +5,6 @@ import Navbar from "./Navbar.js"
 import Home from "./Home.js"
 import AFC from "./AFC"
 import NFC from "./NFC"
-import Conference from "./Conference"
-import MVP from "./MVP"
 
 
 function App() {
@@ -28,7 +26,7 @@ function App() {
   },[])
 
   useEffect(() => {
-    fetch("http://localhost:9292/headcoaches")
+    fetch("http://localhost:9292/headCoaches")
     .then((res) => res.json())
     .then((data) => setHeadCoaches(data))
   },[])
@@ -48,10 +46,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route path="/AFC" element={<AFC teams={teams}  deleteTeam={deleteTeam} addNewTeam={addNewTeam}/>} />
-        <Route path="/NFC" element={<NFC teams={teams} addNewTeam={addNewTeam}/>} />
-        <Route path="/Conference" element={<Conference />} />
-        <Route path="/MVP" element={<MVP mvps={mvps}/>} />
+        <Route path="/AFC" element={<AFC teams={teams} headCoaches={headCoaches} mvps={mvps} deleteTeam={deleteTeam} addNewTeam={addNewTeam}/>} />
+        <Route path="/NFC" element={<NFC teams={teams} headCoaches={headCoaches} mvps={mvps} deleteTeam={deleteTeam} addNewTeam={addNewTeam}/>} />
       </Routes>
 
     </div>

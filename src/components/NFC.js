@@ -1,13 +1,14 @@
 import Team from "./Team"
 import Createyourteam from "./Createyourteam"
-function NFC({teams, addNewTeam}){
+
+function NFC({teams, deleteTeam, addNewTeam, headCoaches,mvps}){
 
 
     let nfcSouthTeams= [...teams]
     nfcSouthTeams= nfcSouthTeams.slice(28)
     const listNfcSouthTeams = nfcSouthTeams.map((team) => {
         return(
-            <Team key={teams.id} team={team} />
+            <Team key={teams.id} team={team}  deleteTeam={deleteTeam} mvps={mvps} headCoaches={headCoaches} />
         )
     })
 
@@ -15,7 +16,7 @@ function NFC({teams, addNewTeam}){
     nfcNorthTeams= nfcNorthTeams.slice(24,28)
     const listNfcNorthTeams = nfcNorthTeams.map((team) => {
         return(
-            <Team key={teams.id} team={team} />
+            <Team key={teams.id} team={team} deleteTeam={deleteTeam} mvps={mvps} headCoaches={headCoaches}/>
         )
     })
 
@@ -23,7 +24,7 @@ function NFC({teams, addNewTeam}){
     nfcWestTeams= nfcWestTeams.slice(20,24)
     const listNfcWestTeams = nfcWestTeams.map((team) => {
         return(
-            <Team key={teams.id} team={team} />
+            <Team key={teams.id} team={team} deleteTeam={deleteTeam} mvps={mvps} headCoaches={headCoaches}/>
         )
     })
 
@@ -31,7 +32,7 @@ function NFC({teams, addNewTeam}){
     nfcEastTeams= nfcEastTeams.slice(16,20)
     const listNfcEastTeams = nfcEastTeams.map((team) => {
         return(
-            <Team key={teams.id} team={team} />
+            <Team key={teams.id} team={team}  deleteTeam={deleteTeam}  mvps={mvps} headCoaches={headCoaches}/>
         )
     })
     return(        

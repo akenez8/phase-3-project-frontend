@@ -3,14 +3,18 @@ import React, {useState} from 'react';
 function CreateYourTeam({addNewTeam}){
     const [newTeamName, setNewTeamName] = useState("")
     const [newTeamCity, setNewTeamCity] = useState("")
-    const [newTeamRecord, setNewTeamRecord] = useState("")
+    const [newTeamWin, setNewTeamWin] = useState(0)
+    const [newTeamLoss, setNewTeamLoss] = useState(0)
+    const [newTeamTie, setNewTeamTie] = useState(0)
 
     function handleSubmit(e){
         e.preventDefault()
         const newTeamObj = {
             name: newTeamName,
             city: newTeamCity,
-            win_loss_tie: newTeamRecord
+            win: newTeamWin,
+            loss: newTeamLoss,
+            tie: newTeamTie,
         }
         fetch(`http://localhost:9292/teams`, {
             method: `POST`,
@@ -38,9 +42,19 @@ function CreateYourTeam({addNewTeam}){
                 onChange={(e) => setNewTeamCity(e.target.value)}/>
                 <input 
                 type="text" 
-                placeholder="Team Record..."
-                value={newTeamRecord}
-                onChange={(e) => setNewTeamRecord(e.target.value)}/>
+                placeholder="Team Wins..."
+                value={newTeamWin}
+                onChange={(e) => setNewTeamWin(e.target.value)}/>
+                <input 
+                type="text" 
+                placeholder="Team Losses..."
+                value={newTeamWin}
+                onChange={(e) => setNewTeamLoss(e.target.value)}/>
+                <input 
+                type="text" 
+                placeholder="Team Ties..."
+                value={newTeamWin}
+                onChange={(e) => setNewTeamTie(e.target.value)}/>
                 <button type="submit" className = "newTeamButton">Submit</button>
             </form>
         </div>
