@@ -22,6 +22,26 @@ h3{
   font-size: 50px;
 }
 
+h4{
+  font-family: rockwell;
+  font-size: 25px;
+}
+
+.mvpname{
+  font-family: rockwell;
+  font-size: 25px;
+}
+
+.mvpposition{
+  font-family: rockwell;
+  font-size: 20px;
+}
+
+.mvpyear{
+  font-family: rockwell;
+  font-size: 15px;
+}
+
 .nav{
   font-style: rockwell;
   display: inline-block;

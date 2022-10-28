@@ -6,9 +6,9 @@ function MVP({mvps, addNewMvp}){
     displayMvps= displayMvps.map((mvp) => {
         return(
             <div>
-                <p>{mvp.name}</p>
-                <p>{mvp.position}</p>
-                <p>{mvp.year}</p>
+                <p className="mvpname"><b>Name: </b>{mvp.name}🏆</p>
+                <p className="mvpposition"><b>Position: </b>{mvp.position}</p>
+                <p className="mvpyear"><b>MVP Year: </b>{mvp.year}</p>
             </div>
         )
     })
